@@ -7,11 +7,13 @@
 {
     list-style-type: none;
     overflow: auto;
+    margin-bottom: 10px;
 }
 #myList li div
 {
-   width: 100%;
-   height: 100px;
+   width: 25%;
+   height: 300px;
    background-color: #ee2939;
    color: #ffffffff;
+   padding: 2vh;
 }
