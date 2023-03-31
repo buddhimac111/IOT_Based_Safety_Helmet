@@ -1,0 +1,17 @@
+#myList
+{
+   margin-top: 10px;
+   margin-right: 5vh;
+}
+#myList li 
+{
+    list-style-type: none;
+    overflow: auto;
+}
+#myList li div
+{
+   width: 100%;
+   height: 100px;
+   background-color: #ee2939;
+   color: #ffffffff;
+}

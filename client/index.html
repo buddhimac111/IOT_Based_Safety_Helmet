@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel='stylesheet' href='bootstrap/bootstrap.min.css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href='css/nav.css'>
+    <link rel='stylesheet' href='css/alerts.css'>
+
+    <script src='bootstrap/bootstrap.bundle.min.js'></script>
+    <script src="https://cdn.socket.io/socket.io-3.0.0.js"></script>
+    <script defer src="app.js"></script>
+
+    <title>IOT Local App</title>
+
+</head>
+
+<body>
+    <nav class='navbar navbar-expand-lg navbar-light bg-success'>
+        <div class='container'>
+            <a class='navbar-brand text-white' href='#'>Local Server</a>
+            <button class='btn btn-success navbar-toggler border-3 px-2' type='button' data-bs-toggle='offcanvas'
+                data-bs-target='#offcanvasExample' aria-controls='offcanvasExample'><i class="fa fa-bars"
+                    style="color: #ffffffff;"></i>
+
+
+            </button>
+            <div class='offcanvas offcanvas-start-lg bg-success' tabindex='-1' id='offcanvasExample'
+                aria-labelledby='offcanvasExampleLabel'>
+                <div class='offcanvas-header d-flex d-lg-none'>
+                    <h5 class='offcanvas-title text-white' id='offcanvasExampleLabel'>Local Server</h5>
+                    <a href='javascript:void(0) ' class='text-reset p-0' data-bs-dismiss='offcanvas' aria-label='close'>
+                        <svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='#FFFFFF'
+                            class='bi bi-x-circle' viewBox='0 0 16 16'>
+                            <path d='M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z' />
+                            <path
+                                d='M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z' />
+                        </svg>
+                    </a>
+                </div>
+                <div class='offcanvas-body p-lg-0'>
+                    <ul class='navbar-nav'>
+                        <li class='nav-item'>
+                            <a class='nav-link active' aria-current='page' href='index.html'>Alerts</a>
+                        </li>
+                        <li class='nav-item'>
+                            <a class='nav-link active' aria-current='page' href='#'>Reports</a>
+                        </li>
+                        <li class='nav-item'>
+                            <button type="button" class="btn btn-dark">Sync Cloud</button>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+        <ul id="myList">
+            <li>
+                <div>
+                    <p>Helmet id: 1002454</p>
+                    
+                   
+                </div>
+            </li>
+            
+
+        </ul>
+
+    <!-- <input placeholder="message">
+    <button>Test http Request</button>
+    <div style="background-color: blue; width: 100px; height: 100px;">
+        <p>hell</p>
+
+    </div> -->
+
+
+
+
+
+</body>
+
+</html>
