@@ -26,15 +26,46 @@ io.on('connection', (socket) => {
     app.post('/alert', (req, res, next) => {
 
         const now = new Date();
+
+        const date = now.toLocaleDateString();
         const time = now.toLocaleTimeString();
         const id = req.body.id;
         const adit = req.body.adit;
+        
+        //oxygen
         const oxygen = req.body.oxygen;
+        const floOxygen = parseFloat(oxygen);
+        if
+            (floOxygen < 19.5) {
+           var lvlOxygen = 'Low';
+           var colorOxygen = '#FF1405';
+        }
+        else
+        {
+            var lvlOxygen = 'Normal';
+            var colorOxygen = '#39FF14';
+        }
+
+       //Co2
+        const co2 = req.body.co2;
+        const floCo2 = parseFloat(co2);
+        if
+            (floCo2 > 20.5) {
+           var lvlCo2 = 'High';
+           var colorCo2 = '#FF1405';
+        }
+        else
+        {
+            var lvlCo2 = 'Normal';
+            var colorCo2 = '#39FF14';
+        }
+
         const h2s = req.body.h2s;
         const co = req.body.co;
         const lpg = req.body.lpg;
+        const methane = req.body.methane;
 
-        socket.emit('warning', { time, id, adit, oxygen, h2s, co, lpg });
+        socket.emit('warning', { date, time, id, adit, oxygen,lvlOxygen,colorOxygen, co2, h2s, co, lpg , methane });
 
         res.send(
             'Request Received'
