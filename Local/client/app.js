@@ -1,11 +1,9 @@
-
 const socket = io('ws://localhost:5000');
 
 socket.on('warning', data => {
-
-const newlist = document.createElement("li");
-newlist.innerHTML =
-` <div class="w-100 mb-3 pb-3 alertBox container-fluid">
+    const newlist = document.createElement("li");
+    newlist.innerHTML =
+        ` <div class="w-100 mb-3 pb-3 alertBox container-fluid">
                 <div class="headerWarn p-3">
                     <i class="fa-solid fa-triangle-exclamation fa-beat-fade" style="font-size: 20px;"></i>
                 </div>
@@ -65,10 +63,10 @@ newlist.innerHTML =
                                     <p class="txtTopic">Carbon Dioxide:</p>
                                 </td>
                                 <td class="">
-                                    <p class="txtData ps-4">25 %</p>
+                                    <p class="txtData ps-4">${data.co2} %</p>
                                 </td>
                                 <td class="">
-                                    <p class="txtSize ps-4" style="color:  #FF1405;">High</p>
+                                    <p class="txtSize ps-4" style="color:  ${data.colorCo2};">${data.lvlCo2}</p>
                                 </td>
                             </tr>
                             <tr>
@@ -76,10 +74,10 @@ newlist.innerHTML =
                                     <p class="txtTopic">Hydrogen sulfide:</p>
                                 </td>
                                 <td class="">
-                                    <p class="txtData ps-4">5 %</p>
+                                    <p class="txtData ps-4">${data.h2s} %</p>
                                 </td>
                                 <td class="">
-                                    <p class="txtSize ps-4" style="color:  #FF1405;">High</p>
+                                    <p class="txtSize ps-4" style="color:  ${data.colorH2s};">${data.lvlH2s}</p>
                                 </td>
                             </tr>
                             <tr>
@@ -87,10 +85,10 @@ newlist.innerHTML =
                                     <p class="txtTopic">Carbon Monoxide:</p>
                                 </td>
                                 <td class="">
-                                    <p class="txtData ps-4">2 %</p>
+                                    <p class="txtData ps-4">${data.co} %</p>
                                 </td>
                                 <td class="">
-                                    <p class="txtSize ps-4" style="color:  #39FF14;">Normal</p>
+                                    <p class="txtSize ps-4" style="color:  ${data.colorCo};">${data.lvlCo}</p>
                                 </td>
                             </tr>
                             <tr>
@@ -98,10 +96,10 @@ newlist.innerHTML =
                                     <p class="txtTopic">LP Gas:</p>
                                 </td>
                                 <td class="">
-                                    <p class="txtData ps-4">2 %</p>
+                                    <p class="txtData ps-4">${data.lpg} %</p>
                                 </td>
                                 <td class="">
-                                    <p class="txtSize ps-4" style="color:  #39FF14;">Normal</p>
+                                    <p class="txtSize ps-4" style="color:  ${data.colorLpg};">${data.lvlLpg}</p>
                                 </td>
                             </tr>
                             <tr>
@@ -109,10 +107,10 @@ newlist.innerHTML =
                                     <p class="txtTopic">Methane:</p>
                                 </td>
                                 <td class="">
-                                    <p class="txtData ps-4">4 %</p>
+                                    <p class="txtData ps-4">${data.methane} %</p>
                                 </td>
                                 <td class="">
-                                    <p class="txtSize ps-4" style="color:  #FF1405;">High</p>
+                                    <p class="txtSize ps-4" style="color:  ${data.colorMethane};">${data.lvlMethane}</p>
                                 </td>
                             </tr>
 
@@ -122,12 +120,13 @@ newlist.innerHTML =
             </div>
 `;
 
-// Insert before existing child:
-const list = document.getElementById("myList");
-list.insertBefore(newlist, list.children[0]);
+    // Insert before existing child:
+    const list = document.getElementById("myList");
+    list.insertBefore(newlist, list.children[0]);
 
 
-   
+
     console.log(data)
+    play();
 
 });

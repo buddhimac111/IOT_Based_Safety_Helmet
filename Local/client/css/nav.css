@@ -5,7 +5,7 @@
     background      : none;
     border          : none;
     justify-content : end;
-    color           : green;
+    color           : var(--color-secondary);
   }
 }
 
